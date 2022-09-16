@@ -49,3 +49,7 @@ td {
 p {
   font-size: 1.5rem;
 }
+
+.dynamic-text-color {
+  color: royalblue;
+}
