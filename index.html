@@ -8,8 +8,13 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <div class="container">
-      <div class="intro">
+    <header>
+      <nav>
+        <a href="#about-me">About Me</a><a href="#qualifications">Qualifications</a><a href="#hobbies">Hobbies</a><a href="#technologies">Technologies</a><a href="#contact-me">Contact</a>
+      </nav>
+    </header>
+    <main class="container">
+      <article class="intro">
         <img id="profile-image" src="Gaurav.jpg" alt="Profile image - Gaurav" />
         <h1>Hi, I'm Gaurav</h1>
         <p>I am a <span id="dynamic-text" class="dynamic-text-color"></span></p>
@@ -28,8 +33,8 @@
             />
           </a>
         </p>
-      </div>
-      <div id="about-me">
+      </article>
+      <section id="about-me">
         <h2>About Me</h2>
         <p>A Software Engineer by profession with 9 years of industry experience.</p>
         <p>In 2020 I started tutoring as a hobby. A way to earn a passive side income.</p>
@@ -43,24 +48,24 @@
           This website is an attempt to share my knowledge and experience. I'm willing to share my knowledge and
           experience with you. Are you willing to learn?
         </p>
-      </div>
+      </section>
 
-      <div id="qualifications">
+      <section id="qualifications">
         <h2>Qualifications</h2>
         <ol>
           <li>BE Computer</li>
           <li>CDAC - Wireless and Mobile Computing</li>
         </ol>
-      </div>
-      <div id="hobbies">
+      </section>
+      <section id="hobbies">
         <h2>Hobbies</h2>
         <ul>
           <li>Swimming</li>
           <li>Listening to Music</li>
           <li>Drawing</li>
         </ul>
-      </div>
-      <div id="technologies">
+      </section>
+      <section id="technologies">
         <h2>Technologies</h2>
         <table>
           <tr>
@@ -84,26 +89,30 @@
             <td>Postgres</td>
           </tr>
         </table>
-      </div>
-    </div>
-    <div id="contact-me">
+      </section>
+    </section>
+    <section id="contact-me">
       <form name="contact" id="contact" method="POST" data-netlify="true">
         <h1>Contact Me</h1>
-        <div>
+        <section>
           <label for="firstName">First name</label>
           <input type="text" name="firstName" id="firstName" required />
-        </div>
-        <div>
+        </section>
+        <section>
           <label for="lastName">Last name</label>
           <input type="text" name="lastName" id="lastName" required />
-        </div>
-        <div>
+        </section>
+        <section>
           <label for="message">Message</label>
           <textarea name="message" id="message" cols="30" rows="10"> </textarea>
-        </div>
+        </section>
         <button type="submit">Send</button>
       </form>
-    </div>
+    </section>
+    </main>
+    <footer>
+      Made with ❤️ by Gaurav ©2022
+    </footer>
     <script src="main.js"></script>
   </body>
 </html>
