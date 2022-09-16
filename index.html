@@ -86,6 +86,24 @@
         </table>
       </div>
     </div>
+    <div id="contact-me">
+      <form name="contact" id="contact" method="POST" data-netlify="true">
+        <h1>Contact Me</h1>
+        <div>
+          <label for="firstName">First name</label>
+          <input type="text" name="firstName" id="firstName" required />
+        </div>
+        <div>
+          <label for="lastName">Last name</label>
+          <input type="text" name="lastName" id="lastName" required />
+        </div>
+        <div>
+          <label for="message">Message</label>
+          <textarea name="message" id="message" cols="30" rows="10"> </textarea>
+        </div>
+        <button type="submit">Send</button>
+      </form>
+    </div>
     <script src="main.js"></script>
   </body>
 </html>

@@ -1,4 +1,5 @@
 const dynamicContent = document.getElementById("dynamic-text");
+console.log(dynamicContent)
 
 const phrases = ["Software Engineer...", "Mentor...", "Human Being...", "teacher at Devsnest"]
 let pharseIndex = 0;
@@ -33,6 +34,7 @@ function clearLetters() {
             updatedPhrase += phrases[pharseIndex].charAt(index);
 
         }
+        console.log(updatedPhrase);
         dynamicContent.textContent = updatedPhrase;
         letterIndex -= 1;
         setTimeout(clearLetters, erasingSpeed)
