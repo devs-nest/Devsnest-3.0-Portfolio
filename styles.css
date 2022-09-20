@@ -2,26 +2,40 @@
   box-sizing: border-box;
 }
 
-html {
+:root {
   scroll-behavior: smooth;
+  --background-color: hsl(240deg, 80%, 100%);
+  --secondary-color: hsl(225, 85%, 57%);
+  --text-color: hsl(240deg 95% 8%);
+  --intro-color: hsl(0, 0%, 85%);
+
+  --font-size-small: 0.5rem;
+  --font-size-regular: 1rem;
+  --font-size-large: 1.5rem;
+  --font-size-xl: 2rem;
+
+  --spacing-regular: 1rem;
 }
 
 body {
   margin: 0;
   font-family: Arial, Helvetica, sans-serif;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  font-size: var(--font-size-large);
 }
 
 header {
   padding: 16px;
   position: sticky;
   top: 0;
-  border: 1px solid white;
-  background: hsl(0, 0%, 100%);
-  border-bottom: 2px solid;
+  background: var(--background-color);
+  z-index: 1;
 }
 nav a {
   text-decoration: none;
-  color: royalblue;
+  color: inherit;
+  font-size: var(--font-size-regular);
 }
 header nav > a {
   margin-right: 16px;
@@ -29,11 +43,12 @@ header nav > a {
 header nav > a:last-child {
   margin-right: revert;
 }
-nav > a:hover {
-  text-decoration: underline;
+nav a:hover,
+nav a:visited:hover {
+  color: var(--secondary-color);
 }
 nav a:visited {
-  color: royalblue;
+  color: inherit;
 }
 
 footer {
@@ -52,7 +67,7 @@ footer {
 .intro {
   margin: -16px;
   padding: 16px;
-  background-color: #1d1c1c;
+  background-color: var(--intro-color);
   color: white;
   text-align: center;
 }
@@ -60,7 +75,7 @@ footer {
 #profile-image {
   height: 400px;
   width: 400px;
-  border-radius: 16px;
+  filter: drop-shadow(4px -6px 10px black);
 }
 
 .social-links img {
@@ -85,10 +100,6 @@ td {
   padding: 8px;
 }
 
-p {
-  font-size: 1.5rem;
-}
-
 .dynamic-text-color {
   color: royalblue;
 }
@@ -104,6 +115,7 @@ form#contact {
 #contact label {
   display: block;
   font-weight: 600;
+  font-size: var(--font-size-regular);
 }
 #contact input,
 #contact textarea,
@@ -116,6 +128,30 @@ form#contact {
   margin-top: 16px;
 }
 
+#technologies {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+
+  /* place-items: center; */
+  gap: var(--spacing-regular);
+  justify-content: center;
+  justify-items: center;
+}
+.card {
+  border: 1px solid white;
+  padding: var(--spacing-regular);
+  box-shadow: 3px 3px 6px 5px var(--secondary-color);
+  width: 100%;
+}
+
+.card ul {
+  list-style: none;
+  padding: 0;
+  /* text-align: center; */
+}
+.card header h1 {
+  text-align: center;
+}
 .mobile-nav,
 section.menu {
   display: none;
@@ -130,9 +166,11 @@ section.menu {
   }
   #menu-button {
     display: block;
-    background: transparent;
     border-radius: 8px;
     margin-left: auto;
+    background: var(--background-color);
+    color: var(--text-color);
+    border-color: var(--text-color);
   }
   section.menu {
     display: revert;
@@ -141,8 +179,8 @@ section.menu {
     overflow: hidden;
     position: fixed;
     top: 0;
-    z-index: 1;
-    background: hsl(0, 0%, 100%);
+    z-index: 2;
+    background: var(--background-color);
     transition: height 0.8s ease-in-out;
   }
   section.menu ul {
@@ -155,18 +193,30 @@ section.menu {
   section.menu nav {
     margin-top: 48px;
   }
+  section.menu nav a {
+    font-size: var(--font-size-large);
+  }
   #close-menu {
     position: absolute;
     right: 16px;
     top: 16px;
     background: transparent;
-    font-size: x-large;
+    font-size: var(--font-size-xl);
     border: none;
+    color: var(--text-color);
   }
 }
 
 @media (width<=450px) {
   #profile-image {
     width: 100%;
+  }
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    --background-color: hsl(240deg, 80%, 5%);
+    --text-color: hsl(240deg 95% 100%);
+    --intro-color: hsl(0, 0%, 18%);
   }
 }
