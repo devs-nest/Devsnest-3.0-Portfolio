@@ -8,9 +8,24 @@
     <link rel="stylesheet" href="styles.css" />
   </head>
   <body>
-    <header>
+    <section class="menu">
+      <button id="close-menu">&times;</button>
       <nav>
+        <ul>
+        <li><a href="#about-me">About Me</a></li>
+        <li><a href="#qualifications">Qualifications</a></li>
+        <li><a href="#hobbies">Hobbies</a></li>
+        <li><a href="#technologies">Technologies</a></li>
+        <li><a href="#contact-me">Contact</a></li>
+        </ul>
+      </nav>
+    </section>
+    <header>
+      <nav class="default-nav">
         <a href="#about-me">About Me</a><a href="#qualifications">Qualifications</a><a href="#hobbies">Hobbies</a><a href="#technologies">Technologies</a><a href="#contact-me">Contact</a>
+      </nav>
+      <nav class="mobile-nav">
+        <button id="menu-button">Menu</button>
       </nav>
     </header>
     <main class="container">
@@ -114,5 +129,6 @@
       Made with ❤️ by Gaurav ©2022
     </footer>
     <script src="main.js"></script>
+    <script src="menu.js"></script>
   </body>
 </html>

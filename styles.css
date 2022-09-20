@@ -19,13 +19,21 @@ header {
   background: hsl(0, 0%, 100%);
   border-bottom: 2px solid;
 }
-header nav > a {
-  margin: 16px;
+nav a {
   text-decoration: none;
-  padding: 8px;
+  color: royalblue;
 }
-header nav > a:hover {
+header nav > a {
+  margin-right: 16px;
+}
+header nav > a:last-child {
+  margin-right: revert;
+}
+nav > a:hover {
   text-decoration: underline;
+}
+nav a:visited {
+  color: royalblue;
 }
 
 footer {
@@ -106,4 +114,59 @@ form#contact {
 }
 #contact-me {
   margin-top: 16px;
+}
+
+.mobile-nav,
+section.menu {
+  display: none;
+}
+
+@media (width <500px) {
+  .default-nav {
+    display: none;
+  }
+  .mobile-nav {
+    display: revert;
+  }
+  #menu-button {
+    display: block;
+    background: transparent;
+    border-radius: 8px;
+    margin-left: auto;
+  }
+  section.menu {
+    display: revert;
+    height: 0;
+    width: 100%;
+    overflow: hidden;
+    position: fixed;
+    top: 0;
+    z-index: 1;
+    background: hsl(0, 0%, 100%);
+    transition: height 0.8s ease-in-out;
+  }
+  section.menu ul {
+    list-style: none;
+  }
+  section.menu ul > li {
+    margin-bottom: 16px;
+    font-size: 1.5rem;
+  }
+  section.menu nav {
+    margin-top: 48px;
+  }
+  #close-menu {
+    position: absolute;
+    right: 16px;
+    top: 16px;
+    background: transparent;
+    font-size: x-large;
+    border: none;
+  }
+}
+
+@media (width<=450px) {
+  #profile-image {
+    width: 100%;
+  }
 }
