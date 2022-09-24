@@ -8,13 +8,16 @@
   --secondary-color: hsl(225, 85%, 57%);
   --text-color: hsl(240deg 95% 8%);
   --intro-color: hsl(0, 0%, 85%);
+  --shadow-color: hsl(225 10% 83%);
+  --shadow-color-dark: hsl(225 10% 63%);
 
   --font-size-small: 0.5rem;
   --font-size-regular: 1rem;
   --font-size-large: 1.5rem;
   --font-size-xl: 2rem;
 
-  --spacing-regular: 1rem;
+  --spacing-regular: 16px;
+  --spacing-small: calc(var(--spacing-regular) / 2);
 }
 
 body {
@@ -25,12 +28,13 @@ body {
   font-size: var(--font-size-large);
 }
 
-header {
+.header {
   padding: 16px;
   position: sticky;
   top: 0;
   background: var(--background-color);
   z-index: 1;
+  border: 1px solid;
 }
 nav a {
   text-decoration: none;
@@ -58,6 +62,10 @@ footer {
 }
 .container {
   padding: 16px;
+}
+
+section {
+  scroll-margin-top: calc(100px - (2 * var(--spacing-regular)));
 }
 
 .container > section > h2 {
@@ -128,7 +136,7 @@ form#contact {
   margin-top: 16px;
 }
 
-#technologies {
+#technologies .container {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
 
@@ -138,10 +146,21 @@ form#contact {
   justify-items: center;
 }
 .card {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
   border: 1px solid white;
   padding: var(--spacing-regular);
-  box-shadow: 3px 3px 6px 5px var(--secondary-color);
+  box-shadow: 3px 3px 6px 5px var(--shadow-color);
   width: 100%;
+  border-radius: var(--spacing-regular);
+  transition: transform 0.4s ease-in, box-shadow 0.4s ease-in-out;
+}
+
+.card:hover {
+  box-shadow: 3px 3px 8px 9px var(--shadow-color-dark);
+  transform: translateY(calc(-1 * var(--spacing-small)));
 }
 
 .card ul {
@@ -150,7 +169,7 @@ form#contact {
   /* text-align: center; */
 }
 .card header h1 {
-  text-align: center;
+  margin: 0;
 }
 .mobile-nav,
 section.menu {
