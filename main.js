@@ -35,13 +35,23 @@ document.addEventListener("DOMContentLoaded", function () {
                 updatedPhrase += phrases[pharseIndex].charAt(index);
 
             }
-            console.log(updatedPhrase);
             dynamicContent.textContent = updatedPhrase;
             letterIndex -= 1;
             setTimeout(clearLetters, erasingSpeed)
         }
     }
 
-    printLetters(phrases[pharseIndex])
+    printLetters(phrases[pharseIndex]);
+
+    window.addEventListener("scroll", function () {
+        console.log(this.window.scrollY)
+        let intro = this.document.querySelector(".intro");
+        if (this.window.scrollY >= (intro.offsetHeight + intro.offsetTop)) {
+            this.document.querySelector(".header").style.position = "sticky";
+        } else {
+            this.document.querySelector(".header").style.position = "revert";
+
+        }
+    })
 })
 

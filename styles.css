@@ -30,7 +30,7 @@ body {
 
 .header {
   padding: 16px;
-  position: sticky;
+  position: static;
   top: 0;
   background: var(--background-color);
   z-index: 1;
