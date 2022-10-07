@@ -28,23 +28,33 @@ body {
   font-size: var(--font-size-large);
 }
 
+body.dark-theme {
+  --background-color: hsl(240deg, 80%, 5%);
+  --text-color: hsl(240deg 95% 100%);
+  --intro-color: hsl(0, 0%, 18%);
+}
+
 .header {
   padding: 16px;
   position: static;
   top: 0;
   background: var(--background-color);
   z-index: 1;
-  border: 1px solid;
+  border-bottom: 1px solid;
+}
+.default-nav {
+  display: flex;
+  justify-content: space-between;
 }
 nav a {
   text-decoration: none;
   color: inherit;
   font-size: var(--font-size-regular);
 }
-header nav > a {
+header nav a {
   margin-right: 16px;
 }
-header nav > a:last-child {
+header nav a:last-child {
   margin-right: revert;
 }
 nav a:hover,
@@ -237,5 +247,10 @@ section.menu {
     --background-color: hsl(240deg, 80%, 5%);
     --text-color: hsl(240deg 95% 100%);
     --intro-color: hsl(0, 0%, 18%);
+  }
+  body.light-theme {
+    --background-color: hsl(240deg, 80%, 100%);
+    --text-color: hsl(240deg 95% 8%);
+    --intro-color: hsl(0, 0%, 85%);
   }
 }
