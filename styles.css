@@ -45,6 +45,7 @@ body.dark-theme {
 .default-nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 nav a {
   text-decoration: none;
@@ -60,6 +61,7 @@ header nav a:last-child {
 nav a:hover,
 nav a:visited:hover {
   color: var(--secondary-color);
+  text-decoration: underline;
 }
 nav a:visited {
   color: inherit;
@@ -97,8 +99,8 @@ section {
 }
 
 .social-links img {
-  height: 20px;
-  width: 20px;
+  height: 30px;
+  width: 30px;
 }
 
 .social-links a {
@@ -122,12 +124,29 @@ td {
   color: royalblue;
 }
 
-form#contact {
+#contact-me .contacts-container {
+  display: flex;
+  padding: var(--spacing-regular);
+  flex-wrap: wrap;
+  gap: var(--spacing-regular);
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-img {
   max-width: 400px;
-  margin: auto;
-  padding: 16px;
-  border: 1px solid;
-  border-radius: 16px;
+}
+.contact-img img {
+  width: 100%;
+  height: auto;
+}
+
+form#contact {
+  width: 100%;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-regular);
 }
 
 #contact label {
@@ -142,6 +161,15 @@ form#contact {
   font-size: 1.2rem;
   padding: 8px;
 }
+
+#contact button {
+  outline: none;
+  border: none;
+  cursor: pointer;
+  background-color: var(--secondary-color);
+  color: white;
+}
+
 #contact-me {
   margin-top: 16px;
 }
@@ -162,14 +190,20 @@ form#contact {
   align-items: center;
   border: 1px solid white;
   padding: var(--spacing-regular);
-  box-shadow: 3px 3px 6px 5px var(--shadow-color);
+
   width: 100%;
   border-radius: var(--spacing-regular);
   transition: transform 0.4s ease-in, box-shadow 0.4s ease-in-out;
 }
 
-.card:hover {
+.shadow {
+  box-shadow: 3px 3px 6px 5px var(--shadow-color);
+}
+.shadow:hover {
   box-shadow: 3px 3px 8px 9px var(--shadow-color-dark);
+}
+
+.move-y:hover {
   transform: translateY(calc(-1 * var(--spacing-small)));
 }
 
@@ -253,4 +287,13 @@ section.menu {
     --text-color: hsl(240deg 95% 8%);
     --intro-color: hsl(0, 0%, 85%);
   }
+}
+
+#theme-switcher {
+  cursor: pointer;
+  height: 3rem;
+  width: 3em;
+  background: transparent;
+  outline: none;
+  border: none;
 }

@@ -23,7 +23,13 @@ document.addEventListener("DOMContentLoaded", () => {
     }
 
     const setButtonText = (theme) => {
-        themeSwitcher.textContent = theme === "dark" ? "Light" : "Dark";
+        // themeSwitcher.textContent = theme === "dark" ? "Light" : "Dark";
+        themeSwitcher.innerHTML = "";
+        const image = document.createElement("img");
+        image.src = theme === "dark" ? "light.svg" : "dark.svg";
+        image.id = "theme-icon";
+        themeSwitcher.appendChild(image);
+
     }
 
     const switchTheme = () => {

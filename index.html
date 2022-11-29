@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Gaurav's Portfolio</title>
     <link rel="stylesheet" href="styles.css" />
+    <link rel="stylesheet" href="projects.css" />
   </head>
   <body>
     <section class="menu">
@@ -13,9 +14,10 @@
       <nav>
         <ul>
         <li><a href="#about-me">About Me</a></li>
+        <li><a href="#projects">Projects</a></li>
+        <li><a href="#technologies">Technologies</a></li>
         <li><a href="#qualifications">Qualifications</a></li>
         <li><a href="#hobbies">Hobbies</a></li>
-        <li><a href="#technologies">Technologies</a></li>
         <li><a href="#contact-me">Contact</a></li>
         </ul>
       </nav>
@@ -23,7 +25,7 @@
     <header class="header">
       <nav class="default-nav">
         <section>
-          <a href="#about-me">About Me</a><a href="#qualifications">Qualifications</a><a href="#hobbies">Hobbies</a><a href="#technologies">Technologies</a><a href="#contact-me">Contact</a>
+          <a href="#about-me">About Me</a><a href="#projects">Projects</a><a href="#technologies">Technologies</a><a href="#qualifications">Qualifications</a><a href="#hobbies">Hobbies</a><a href="#contact-me">Contact</a>
         </section>
         <section>
           <button id="theme-switcher"></button>
@@ -70,6 +72,51 @@
         </p>
       </section>
 
+      <section id="projects">
+        <h2>Projects</h2>
+        <section class="projects-list"></section>
+          
+      </section>
+
+      
+      <section id="technologies">
+
+        <h2>Technologies</h2>
+        <section class="container">
+          <section class="card shadow move-y shadow move-y">
+            <header>
+              <h1>Frontend</h1>
+            </header>
+            <ul>
+  
+              <li>HTML</li>
+                  <li>JS</li>
+                  <li>CSS</li>
+                </ul>
+              </section>
+              <section class="card shadow move-y">
+                <header>
+                  <h1>Backend</h1>
+                </header>
+                <ul>
+                  
+                  <li>NodeJS</li>
+                  <li>Asp.NET</li>
+                  <li>Rails</li>
+                </ul>
+              </section>
+              <section class="card shadow move-y">
+                <header>
+                  <h1>Database</h1>
+                </header>
+                <ul>
+                  <li>Mongo DB</li>
+                  <li>Postgres</li>
+               <li>MySQL</li>
+            </ul>
+          </section>
+        </section>
+      </section>
       <section id="qualifications">
         <h2>Qualifications</h2>
         <ol>
@@ -85,62 +132,29 @@
           <li>Drawing</li>
         </ul>
       </section>
-      <section id="technologies">
-
-        <h2>Technologies</h2>
-        <section class="container">
-          <section class="card">
-            <header>
-              <h1>Frontend</h1>
-            </header>
-            <ul>
-  
-              <li>HTML</li>
-                  <li>JS</li>
-                  <li>CSS</li>
-                </ul>
-              </section>
-              <section class="card">
-                <header>
-                  <h1>Backend</h1>
-                </header>
-                <ul>
-                  
-                  <li>NodeJS</li>
-                  <li>Asp.NET</li>
-                  <li>Rails</li>
-                </ul>
-              </section>
-              <section class="card">
-                <header>
-                  <h1>Database</h1>
-                </header>
-                <ul>
-                  <li>Mongo DB</li>
-                  <li>Postgres</li>
-               <li>MySQL</li>
-            </ul>
-          </section>
-        </section>
-      </section>
     </section>
     <section id="contact-me">
-      <form name="contact" id="contact" method="POST" data-netlify="true">
-        <h1>Contact Me</h1>
-        <section>
-          <label for="firstName">First name</label>
-          <input type="text" name="firstName" id="firstName" required />
+      <h2>Contact Me</h2>
+      <section class="contacts-container">
+        <section class="contact-img">
+          <img src="undraw_Mailbox.png" alt="image for mailbox">
         </section>
-        <section>
-          <label for="lastName">Last name</label>
-          <input type="text" name="lastName" id="lastName" required />
-        </section>
-        <section>
-          <label for="message">Message</label>
-          <textarea name="message" id="message" cols="30" rows="10"> </textarea>
-        </section>
-        <button type="submit">Send</button>
-      </form>
+        <form name="contact" id="contact" method="POST" data-netlify="true">
+          <section>
+            <label for="firstName">First name</label>
+            <input type="text" name="firstName" id="firstName" required />
+          </section>
+          <section>
+            <label for="lastName">Last name</label>
+            <input type="text" name="lastName" id="lastName" required />
+          </section>
+          <section>
+            <label for="message">Message</label>
+            <textarea name="message" id="message" cols="30" rows="10"> </textarea>
+          </section>
+          <button type="submit">Send</button>
+        </form>
+      </section>
     </section>
     </main>
     <footer>
@@ -149,5 +163,6 @@
     <script src="main.js"></script>
     <script src="menu.js"></script>
     <script src="theme.js"></script>
+    <script src="projects.js"></script>
   </body>
 </html>
