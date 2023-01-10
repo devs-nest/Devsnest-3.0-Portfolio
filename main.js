@@ -2,7 +2,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     const dynamicContent = document.getElementById("dynamic-text");
 
-    const phrases = ["Software Engineer...", "Mentor...", "Human Being...", "teacher at Devsnest"]
+    const phrases = ["Software Engineer...", "Gamer...", "Human Being...", "Athlete"]
     let pharseIndex = 0;
     let letterIndex = 0;
     const typingSpeed = 150;

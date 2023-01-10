@@ -19,4 +19,4 @@ document.addEventListener("DOMContentLoaded", function () {
     document.getElementById("close-menu").addEventListener("click", closeMenu)
     addClickToMenuItems();
 
-})
+}) 
